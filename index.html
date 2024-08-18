@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYRES</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="logo-container">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <div class="welcome-message">
+                    <h2>Welcome!!</h2>
+                </div>
+            </div>
+            <div class="nav-links">
+                <button id="signOutBtn">SIGN OUT</button>
+                <i class="ri-menu-line" id="menuIcon"></i>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left">
+                <h1>INDIA'S N.O 1 <span>TYRES</span> ARE AVAILABLE</h1>
+                <p>HERE, YOU CAN GET EVERY TYPE OF TYRES. WE HAVE BRIDGESTONE AND JK TYRE DEALERSHIP. FOR MORE INFO, CHECK THE MORE INFO SECTION.</p>
+                <p>THANK YOU</p>
+                <button id="exploreBtn">EXPLORE NOW</button>
+            </div>
+            <div class="right">
+                <img src="./—Pngtree—c4d modeling tire wheels_5630000.png" alt="Tire Wheels">
+                <img src="./—Pngtree—textured car tires png_4679148.png" alt="Textured Car Tires">
+            </div>
+        </div>
+    </div>
+    <script>
+        // Sign out functionality
+        document.getElementById('signOutBtn').addEventListener('click', () => {
+            alert('You have signed out.');
+            window.location.href = 'login.html';
+        });
+
+        // Handle the explore button action
+        document.getElementById('exploreBtn').addEventListener('click', () => {
+            window.location.href = 'moreinfo.html'; // Or whichever page you want to link to
+        });
+    </script>
+</body>
+</html>
