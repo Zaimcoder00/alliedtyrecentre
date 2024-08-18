@@ -1,5 +1,5 @@
 function sendToWhatsapp(){
-	let number = "+91 9735597580";
+	let number = "+91 9232789608";
 
 	let name = document.getElementById('name').value;
 	let email = document.getElementById('email').value;
