@@ -1,0 +1,233 @@
+/* General styles for the body */
+body {
+    background-color: white;
+    margin: 0; /* Remove any default margin */
+    font-family: Arial, sans-serif;
+}
+
+/* Styles for the main container */
+.main {
+    min-height: 100vh; /* Ensures the main div takes up full viewport height */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+/* Styles for the navigation bar */
+.nav {
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    background-color: #f5f5f5; /* Light background for navigation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Floating effect */
+    animation: floatNav 2s ease-in-out infinite; /* Animation for floating effect */
+    position: relative; /* Relative positioning for positioning logo */
+}
+
+@keyframes floatNav {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Logo container */
+.logo img {
+    width: 80px; /* Adjust the logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Styles for the navigation items */
+.nav-part2 {
+    display: flex;
+    gap: 2vw; /* Space between menu items */
+    align-items: center;
+    margin-right: auto; /* Push items to the left */
+}
+
+.nav-part2 h4 {
+    font-size: 1.2vw;
+    padding: 0.5vw;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav i {
+    font-size: 3vw;
+    cursor: pointer;
+}
+
+/* Styles for the logo */
+.nav h2 {
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: #333;
+    position: absolute; /* Absolute positioning to move logo */
+    right: 0; /* Align logo to the right */
+    margin-right: 1vw; /* Spacing from the edge */
+}
+
+/* Styles for the content section */
+.content {
+    height: calc(100vh - 100px); /* Ensures the content covers the remaining height */
+    width: 100%;
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center items horizontally */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #fafafa; /* Light background for content area */
+}
+
+/* Styles for the left section */
+.left {
+    text-align: center;
+    max-width: 90%; /* Ensures the content does not exceed the width */
+}
+
+/* Styles for the heading */
+.left h1 {
+    font-size: 4vw;
+    line-height: 4.5vw;
+    color: #333;
+    margin: 0;
+}
+
+/* Styles for the BRIDGESTONE and JK TYRE spans */
+.bridgestone, .jk {
+    font-family: 'Arial Black', sans-serif; /* Bold and strong font */
+    font-size: 4vw; /* Responsive font size */
+    color: #333; /* Dark color for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    letter-spacing: 2px; /* Spacing between letters */
+    font-weight: 900; /* Extra bold weight for emphasis */
+    text-transform: uppercase; /* Uppercase text */
+    padding: 0 5px; /* Padding around the text */
+    display: inline-block; /* Ensure padding is applied correctly */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Smooth transformation effect */
+}
+
+/* Specific styles for BRIDGESTONE TYRE */
+.bridgestone {
+    color: crimson; /* Orange color */
+}
+
+.bridgestone:hover {
+    transform: translateY(-5px); /* Floating effect on hover */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Specific styles for JK TYRE */
+.jk {
+    color: yellow; /* Blue color */
+}
+
+.jk:hover {
+    transform: translateY(-5px); /* Floating effect on hover */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Styles for the support button */
+button {
+    font-size: 1vw;
+    padding: 0.7vw 1.4vw;
+    background-color: rgb(0, 158, 220);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Floating effect */
+    transition: transform 0.3s ease-in-out;
+    margin-top: 10px; /* Adjust top margin to move button down */
+}
+
+button:hover {
+    transform: translateY(-5px); /* Floating effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles for the map section */
+.map {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.map h2 {
+    margin-bottom: 10px;
+}
+
+/* Container to hold both iframes side by side */
+.map-container {
+    display: flex;
+    gap: 10px; /* Space between the maps */
+    justify-content: center; /* Center maps horizontally */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.map-container iframe {
+    max-width: 100%; /* Ensure iframe does not exceed container width */
+    height: 130px; /* Set a fixed height for iframes */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-part2 h4 {
+        font-size: 3vw; /* Smaller font size on smaller screens */
+    }
+    
+    .logo img {
+        width: 50px; /* Smaller logo on smaller screens */
+    }
+    
+    .nav i {
+        font-size: 6vw;
+    }
+
+    .left h1 {
+        font-size: 6vw;
+        line-height: 7vw;
+    }
+
+    button {
+        font-size: 3vw;
+        padding: 2vw 4vw;
+    }
+
+    .map-container iframe {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-part2 h4 {
+        font-size: 4vw; /* Further reduce font size on very small screens */
+    }
+
+    .logo img {
+        width: 40px; /* Smaller logo on very small screens */
+    }
+
+    .left h1 {
+        font-size: 8vw;
+        line-height: 9vw;
+    }
+
+    button {
+        font-size: 4vw;
+        padding: 2.5vw 5vw;
+    }
+
+    .map-container iframe {
+        height: 150px;
+    }
+}

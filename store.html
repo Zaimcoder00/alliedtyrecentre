@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyre Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            width: 80%;
+            margin-left: 20px;
+        }
+
+        .product {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 100px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .product p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .product-price {
+            font-size: 1.2em;
+            color: #000;
+        }
+
+        .review-section {
+            margin-top: 10px;
+        }
+
+        .review-section textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .review-section select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .submit-review {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .reviews {
+            margin-top: 15px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .reviews h4 {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .reviews p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .review-rating {
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to the Tyre Store</h1>
+</header>
+
+<div class="container">
+    <!-- Sidebar for Filters -->
+    <div class="sidebar">
+        <h2>Filter By</h2>
+        <div class="filter">
+            <label for="brand">Brand</label>
+            <select id="brand" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="Bridgestone">Bridgestone</option>
+                <option value="Michelin">Michelin</option>
+                <option value="Goodyear">Goodyear</option>
+            </select>
+        </div>
+
+        <div class="filter">
+            <label for="size">Size</label>
+            <select id="size" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="15">15 inches</option>
+                <option value="17">17 inches</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div id="productList">
+            <!-- Product Items -->
+            <div class="product" data-brand="Bridgestone" data-size="15">
+                <img src="tyre1.jpg" alt="Tyre 1">
+                <div class="product-details">
+                    <h3>Bridgestone Potenza</h3>
+                    <p>Size: 15 inches</p>
+                    <p class="product-price">$120</p>
+                    <p>Available at our store</p>
+                </div>
+                <div class="review-section">
+                    <textarea placeholder="Leave a review"></textarea>
+                    <select>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                    <button class="submit-review" onclick="submitReview(this)">Submit Review</button>
+                </div>
+                <div class="reviews">
+                    <h4>User Reviews:</h4>
+                </div>
+            </div>
+
+            <div class="product" data-brand="Michelin" data-size="17">
+                <img src="tyre2.jpg" alt="Tyre 2">
+                <div class="product-details">
+                    <h3>Michelin Primacy</h3>
+                    <p>Size: 17 inches</p>
+                    <p class="product-price">$140</p>
+                    <p>Available at our store</p>
+                </div>
+                <div class="review-section">
+                    <textarea placeholder="Leave a review"></textarea>
+                    <select>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                    <button class="submit-review" onclick="submitReview(this)">Submit Review</button>
+                </div>
+                <div class="reviews">
+                    <h4>User Reviews:</h4>
+                </div>
+            </div>
+
+            <div class="product" data-brand="Goodyear" data-size="15">
+                <img src="tyre3.jpg" alt="Tyre 3">
+                <div class="product-details">
+                    <h3>Goodyear Assurance</h3>
+                    <p>Size: 15 inches</p>
+                    <p class="product-price">$110</p>
+                    <p>Available at our store</p>
+                </div>
+                <div class="review-section">
+                    <textarea placeholder="Leave a review"></textarea>
+                    <select>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                    <button class="submit-review" onclick="submitReview(this)">Submit Review</button>
+                </div>
+                <div class="reviews">
+                    <h4>User Reviews:</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterProducts() {
+        const brand = document.getElementById('brand').value;
+        const size = document.getElementById('size').value;
+        const products = document.querySelectorAll('.product');
+
+        products.forEach(product => {
+            const productBrand = product.getAttribute('data-brand');
+            const productSize = product.getAttribute('data-size');
+
+            if ((brand === 'all' || brand === productBrand) &&
+                (size === 'all' || size === productSize)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    function submitReview(button) {
+        const productElement = button.closest('.product');
+        const textarea = productElement.querySelector('textarea');
+        const select = productElement.querySelector('select');
+        const reviewsDiv = productElement.querySelector('.reviews');
+
+        const reviewText = textarea.value.trim();
+        const rating = select.value;
+
+        if (reviewText) {
+            const review = document.createElement('div');
+            review.innerHTML = `
+                <h4>${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</h4>
+                <p>${reviewText}</p>
+            `;
+            review.classList.add('review-rating');
+            reviewsDiv.appendChild(review);
+
+            textarea.value = '';
+            select.value = '5';
+        } else {
+            alert('Please enter a review.');
+        }
+    }
+</script>
+
+</body>
+</html>

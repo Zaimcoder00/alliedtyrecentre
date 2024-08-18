@@ -1,0 +1,289 @@
+/* General styles for the body */
+body {
+    background-color: white;
+    margin: 0; /* Remove any default margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Styles for the main container */
+.main {
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Floating effect */
+    animation: floatMain 4s ease-in-out infinite;
+}
+
+@keyframes floatMain {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Styles for the navigation bar */
+.nav {
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1vw; /* Adjusted padding for better spacing */
+    background-color: lightseagreen; /* Background color for nav */
+    color: #fff; /* Text color for nav */
+    animation: floatNav 3s ease-in-out infinite;
+}
+
+@keyframes floatNav {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Styles for the logo and welcome message container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allow logo-container to use available space */
+}
+
+/* Styles for the logo */
+.logo {
+    width: 80px; /* Adjust the logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Styles for the welcome message */
+.welcome-message {
+    margin-left: 28vw; /* Space between logo and welcome message */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    animation: floatText 4s ease-in-out infinite;
+}
+
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.welcome-message h2 {
+    font-size: 2.5vw;
+    color: #fff; /* White text color */
+    margin: 0; /* Remove default margin */
+}
+
+/* Styles for navigation links and button */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+button {
+    font-size: 1vw;
+    padding: 0.7vw 1.4vw;
+    background-color: lightseagreen;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Added floating effect */
+    transition: transform 0.3s ease-in-out;
+    animation: floatButton 4s ease-in-out infinite;
+}
+
+@keyframes floatButton {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+button:hover {
+    transform: translateY(-5px); /* Floating effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles for the content section */
+.content {
+    height: calc(100vh - 100px); /* Adjusted height for the content area */
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Ensure content aligns in a row */
+    box-sizing: border-box; /* Include padding and border in width */
+    animation: floatContent 4s ease-in-out infinite;
+}
+
+@keyframes floatContent {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Styles for the left section */
+.left {
+    height: 100%;
+    width: 50%;
+    padding: 5vw 4vw;
+    animation: floatLeft 4s ease-in-out infinite;
+}
+
+@keyframes floatLeft {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.left h1 {
+    font-size: 4vw;
+    line-height: 4.4vw;
+    animation: floatText 4s ease-in-out infinite;
+}
+
+.left span {
+    color: lightseagreen;
+}
+
+.left p {
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #666;
+    width: 80%;
+    margin-top: 1vw; /* Added margin for spacing */
+}
+
+/* Styles for the buttons in content section */
+.content button {
+    font-size: 1vw;
+    padding: 1.3vw 2.3vw;
+    background-color: lightblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Floating effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+.content button:hover {
+    transform: translateY(-5px); /* Floating effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles for the right section */
+.right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between images and welcome message */
+    animation: floatRight 4s ease-in-out infinite;
+}
+
+@keyframes floatRight {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.right img {
+    height: 50%;
+    width: auto;
+    object-fit: cover; /* Ensure images cover the container without distortion */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .nav {
+        background-color: lightseagreen;
+        color: #fff;
+        padding: 0 5vw;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 60px; /* Smaller logo size for mobile */
+    }
+
+    .welcome-message {
+        margin-left: 28vw; /* Adjust spacing for mobile */
+    }
+
+    .welcome-message h2 {
+        font-size: 4vw; /* Larger text for mobile */
+    }
+
+    .nav-links {
+        display: block; /* Stack the button and icon */
+        width: 100%;
+        margin-top: 10px; /* Space between elements */
+    }
+
+    .nav-links button {
+        display: block;
+        margin: 10px auto; /* Center button horizontally on mobile */
+    }
+
+    .nav-links i {
+        display: block;
+    }
+
+    .content {
+        height: calc(100% - 60px); /* Adjusted height for mobile view */
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        height: 45%;
+    }
+
+    .right {
+        width: 100%;
+        height: 55%;
+        flex-direction: column; /* Stack images and welcome message vertically */
+        align-items: center;
+    }
+
+    .right img {
+        width: 100%; /* Make images responsive */
+        height: auto;
+    }
+
+    .content button {
+        padding: 3vw 6vw;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 3.5vw;
+    }
+}
